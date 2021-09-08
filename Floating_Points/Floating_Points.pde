@@ -13,6 +13,4 @@ void draw() {
   background(#0099e5);
   points.show();
   points.update();
-  
-  saveFrame("images/####.png");
 }
