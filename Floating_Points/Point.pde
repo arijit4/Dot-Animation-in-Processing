@@ -5,6 +5,7 @@ class Point {
   PVector velocity;
 
   float diametre = random(2, 5);
+  float buffer = 50;
   boolean isDead = false;
 
   Point() {
@@ -19,11 +20,12 @@ class Point {
 
   void update() {
     if (!isDead) {
-      if (position.x < -50 || position.x > width + 50
-        || position.y < -50 || position.y > height + 50) {
+      if (position.x < -buffer || position.x > width + buffer
+        || position.y < -buffer || position.y > height + buffer) {
         this.isDead = true;
+      } else {
+        position.add(velocity);
       }
-      position.add(velocity);
     }
   }
 
